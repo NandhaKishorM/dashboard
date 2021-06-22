@@ -23,7 +23,7 @@ Utilities:
 
 - Clone or download the git repository.
     ```sh
-    $ git clone https://github.com/jonalxh/Flask-Admin-Dashboard.git
+    $ https://github.com/kishorkuttan/dashboard
     ```
 - Create and activate a virtual environment:
     ```sh
@@ -46,16 +46,6 @@ Utilities:
     ```
     then just log in with the default user or register one. 
 
-### Screenshots
-![Index](screenshots/index.png)
-![Login](screenshots/login.png)
-![Register](screenshots/register.png)
-![Home](screenshots/home.png)
-![User](screenshots/user.png)
-![Edit](screenshots/edit.png)
-![Create](screenshots/create.png)
-![Skins and Layout](screenshots/skins.png)
 
 
 
-**I hope you enjoy it.**
