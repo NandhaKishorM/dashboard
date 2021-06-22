@@ -117,11 +117,12 @@ class CustomView(BaseView):
     @expose('/')
     def index(self):
         return self.render('admin/custom_index.html')
-
+sentiment_bot= None
+sentiment_user = None
 # Flask views
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',value1=54,value2=45)
 @app.route("/get")
 def get_bot_response():
 
@@ -139,27 +140,32 @@ def get_bot_response():
     text = output
     language= 'en'
 
-    result = client.specific_resource_analysis(
+    result_bot = client.specific_resource_analysis(
         body={"document": {"text": text}}, 
         params={'language': language, 'resource': 'sentiment'
     })
 
     # Output overall sentiment
 
-    sentiment_res = result.sentiment.overall 
-    print("Output overall sentiment:", sentiment_res )
+    sentiment_res_bot = result_bot.sentiment.overall 
+    print("Output overall sentiment bot:", sentiment_res_bot )
+    sentiment_bot = sentiment_res_bot
+
+    result_user = client.specific_resource_analysis(
+        body={"document": {"text": text}}, 
+        params={'language': language, 'resource': 'sentiment'
+    })
+
+    # Output overall sentiment
+
+    sentiment_res_user = result_bot.sentiment.overall 
+    print("Output overall sentiment user:", sentiment_res_user )
+    sentiment_user = sentiment_res_user
 
 
-    db.session.commit()
-    print("user id ",userid)
-    val = User.query.filter_by(customer_id=userid).first()
-  
-    
-    if val is None:
-        print("ok")
- 
-        User.query.filter_by(customer_id=userid).update(dict(sentiment=sentiment_res))
-    
+
+
+   
   
    
    
