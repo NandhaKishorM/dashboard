@@ -14,8 +14,8 @@ import json
 import requests
 from wtforms import PasswordField
 import os
-os.environ["EAI_USERNAME"] = 'nandakishor@deepflow.in'
-os.environ["EAI_PASSWORD"] = 'Kuttan@123'
+os.environ["EAI_USERNAME"] = 'username@mail.com'
+os.environ["EAI_PASSWORD"] = 'password'
 
 from expertai.nlapi.cloud.client import ExpertAiClient
 client = ExpertAiClient()
